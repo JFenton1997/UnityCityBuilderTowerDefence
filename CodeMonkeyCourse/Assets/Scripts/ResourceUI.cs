@@ -30,12 +30,13 @@ public class ResourceUI : MonoBehaviour{
     }
 
     private void Start() {
-        ResourceManager.Instance.OnResourceAmountChanged += ResouceManager_OnResourceAmountChanged;
+        ResourceManager.Instance.OnResourceAmountChanged += ResourceManager_OnResourceAmountChanged;
         UpdateResourceAmount();
         
     }
 
-    private void ResouceManager_OnResourceAmountChanged(object sender, System.EventArgs e)
+    // ReSharper disable Unity.PerformanceAnalysis
+    private void ResourceManager_OnResourceAmountChanged(object sender, System.EventArgs e)
     {
         UpdateResourceAmount();
     }
